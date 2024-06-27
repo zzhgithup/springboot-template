@@ -8,7 +8,7 @@ import java.util.HashMap;
  * @Author zzh
  * @Date 2024/6/26 下午4:35
  * @ClassName Result
- * @Description TODO
+ * @Description 返回结果集
  */
 @Data
 public class Result {
