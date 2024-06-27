@@ -1,12 +1,14 @@
 package com.zzh.utils;
 
 import lombok.Getter;
+
 /**
  * @Author zzh
  * @Date 2024/6/26 下午4:35
  * @ClassName ResultEnum
  * @Description 返回模板
  */
+
 @Getter
 public enum ResultEnum {
     SUCCESS(200, "成功"),
