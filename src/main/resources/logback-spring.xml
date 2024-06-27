@@ -26,7 +26,7 @@
         <append>true</append>
         <!-- 对记录事件进行格式化 -->
         <encoder>
-            <pattern></pattern>
+            <pattern>${pattern}</pattern>
         </encoder>
         <!-- 匹配>=INFO级别的日志-->
         <filter class="ch.qos.logback.classic.filter.LevelFilter">
@@ -36,7 +36,7 @@
         </filter>
         <!-- 最常用的滚动策略，它根据时间来制定滚动策略，既负责滚动也负责出发滚动-->
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>/-%d{yyyy-MM-dd}.log</fileNamePattern>
+            <fileNamePattern>${LOG_PATH}/%d{yyyy-MM-dd}/${INFO_NAME}-%d{yyyy-MM-dd}.log</fileNamePattern>
             <!-- 可选节点，控制保留的归档文件的最大天数。-->
             <maxHistory>30</maxHistory>
         </rollingPolicy>
@@ -51,10 +51,10 @@
             <onMismatch>DENY</onMismatch>
         </filter>
         <encoder>
-            <pattern></pattern>
+            <pattern>${pattern}</pattern>
         </encoder>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>/-%d{yyyy-MM-dd}.log</fileNamePattern>
+            <fileNamePattern>${LOG_PATH}/%d{yyyy-MM-dd}/${ERROR_NAME}-%d{yyyy-MM-dd}.log</fileNamePattern>
             <maxHistory>30</maxHistory>
         </rollingPolicy>
     </appender>
@@ -63,15 +63,15 @@
     <appender name="mysql_log" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
             <!-- 日志文件输出文件名 -->
-            <FileNamePattern>/-%d{yyyy-MM-dd}.log</FileNamePattern>
+            <FileNamePattern>${LOG_PATH}/%d{yyyy-MM-dd}/${SQL_NAME}-%d{yyyy-MM-dd}.log</FileNamePattern>
             <!-- 日志文件保留天数 -->
             <MaxHistory>30</MaxHistory>
         </rollingPolicy>
         <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
-            <pattern></pattern>
+            <pattern>${pattern}</pattern>
         </encoder>
         <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
-            <level></level>
+            <level>${SQL_LEVEL}</level>
         </filter>
     </appender>
 
@@ -80,7 +80,7 @@
     <!-- 打印mysql日志  name= 存放mapper的包名; 注意mybatis-plus.configuration.log-impl: org.apache.ibatis.logging.slf4j.Slf4jImpl
      如果log-impl: org.apache.ibatis.logging.stdout.StdOutImpl ;则只会打印到控制台;不会存放到文件
     -->
-    <logger name="com.baosight.dao" level="" additivity="false">
+    <logger name="com.example.demo.mapper" level="${SQL_LEVEL}" additivity="false">
         <appender-ref ref="stdout"/>
         <appender-ref ref="mysql_log" />
     </logger>
