@@ -39,9 +39,4 @@ public class Result {
         this.data.put(key, value);
         return this;
     }
-
-    public Result data(HashMap<String, Object> map) {
-        this.setData(map);
-        return this;
-    }
 }
