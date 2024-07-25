@@ -21,10 +21,10 @@ mybatis:
 
 
 
+#日志生成路径及日志级别
 log:
-  path: /logs/IrailLog
-  level: TRACE    #DEBUG
-  name:
-    info: IrailInfo
-    error: IrailError
-    sql: IrailSql
+  path: ../logs/logger  #日志路径
+  name: logger  #日志名称
+  level:
+    root: WARN  #普通日志级别   TRACE<DEBUG<INFO<WARN<ERROR<FATAL
+    sql: TRACE  #sql日志级别    TRACE<DEBUG

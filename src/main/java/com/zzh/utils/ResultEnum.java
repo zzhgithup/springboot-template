@@ -24,5 +24,7 @@ public enum ResultEnum {
     private String msg;
 
     ResultEnum(int code, String msg) {
+        this.code = code;
+        this.msg = msg;
     }
 }
