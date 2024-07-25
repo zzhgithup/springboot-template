@@ -1,6 +1,8 @@
 package com.zzh.utils;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.HashMap;
 
@@ -11,6 +13,8 @@ import java.util.HashMap;
  * @Description 返回结果集
  */
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class Result {
     private Integer code;
     private String msg;
