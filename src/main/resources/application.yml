@@ -11,6 +11,12 @@ spring:
     username: root
     password: root
 
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+  mvc:
+    static-path-pattern: /static/**
+
 mybatis:
   configuration:
 #    log-impl: org.apache.ibatis.logging.slf4j.Slf4jImpl   #导出外部日志文件
@@ -23,8 +29,8 @@ mybatis:
 
 #日志生成路径及日志级别
 log:
-  path: ../logs/logger  #日志路径
+  path: logs/logger  #日志路径
   name: logger  #日志名称
   level:
-    root: WARN  #普通日志级别   TRACE<DEBUG<INFO<WARN<ERROR<FATAL
+    root: INFO  #普通日志级别   TRACE<DEBUG<INFO<WARN<ERROR<FATAL
     sql: TRACE  #sql日志级别    TRACE<DEBUG
