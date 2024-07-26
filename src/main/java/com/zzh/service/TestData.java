@@ -2,6 +2,9 @@ package com.zzh.service;
 
 import org.springframework.stereotype.Service;
 
+import java.util.HashMap;
+import java.util.List;
+
 /**
  * @Author zzh
  * @Date 2024/7/25 下午1:49
@@ -12,5 +15,5 @@ import org.springframework.stereotype.Service;
 public interface TestData {
     public int testError();
     public int testNull();
-    public String testDB();
+    public List<HashMap<String, String>> testDB();
 }

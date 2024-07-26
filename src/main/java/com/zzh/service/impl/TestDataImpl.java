@@ -5,6 +5,10 @@ import com.zzh.service.TestData;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+
 /**
  * @Author zzh
  * @Date 2024/7/25 下午1:50
@@ -28,7 +32,7 @@ public class TestDataImpl implements TestData {
     }
 
     @Override
-    public String testDB() {
-        return testMybatisMapper.getInfo().toString();
+    public List<HashMap<String, String>> testDB() {
+        return testMybatisMapper.getInfo();
     }
 }

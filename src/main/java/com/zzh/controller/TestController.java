@@ -6,6 +6,9 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
+import java.util.List;
+
 /**
 * @Author zzh
 * @Date 2024/6/26 下午4:20
@@ -55,7 +58,7 @@ public class TestController {
 
     @GetMapping("db")
     public Result db(){
-        String users = testData.testDB();
+        List<HashMap<String, String>> users = testData.testDB();
         return Result.ok().data("user",users);
     }
 }
