@@ -7,7 +7,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  * @Author zzh
  * @Date 2024/7/26 上午11:40
  * @ClassName DefaultThreadFactory
- * @Description 创建线程的工程类
+ * @Description 创建线程的工厂类
  */
 public class DefaultThreadFactory implements ThreadFactory {
     private final String namePrefix;
