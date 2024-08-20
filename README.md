@@ -1,4 +1,4 @@
-# jar包模板
+# springboot的jar包模板
 
 > ### 1.作用：此项目是一个基于springboot的初始化jar包模板，旨在快速开发一个基于springboot的web项目。
 > ### 2.使用：将模板中的内容替换成自己的项目内容，然后使用maven打包成jar包。
